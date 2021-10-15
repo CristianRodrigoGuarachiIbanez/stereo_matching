@@ -7,12 +7,8 @@ left image:
 ![image](im1.png)  
 right image:  
 ![image](im2.png)  
-disparity image with fixed windows ssd:  
-![image](depth.png)  
 disparity image with rank transform:  
-![image](depth_rank.png)  
-disparity image with census transform:  
-![image](depth_census.png)  
+![image](output.png)  
 
 Clearly, choosing rank transform or census transform as matching cost make disparity map less noisy, probably the nature of these transform make left and right images less sensitive to illumination changes. p.s. using census transform is slower than using rank transform  
 
