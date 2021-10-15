@@ -1,12 +1,13 @@
-#include <ppl.h>
+//#include <ppl.h>
+#include <omp.h>
 #include "ssd_stereo.h"
 
 
-
-#ifdef _WIN64 || _WIN32
-	// use __popcnt (windows) built-in function to count the number of 1 in integer 
-	static inline int HammingDistance(int a, int b) { return static_cast<int>(__popcnt(a ^ b)); }
-#else
+//
+//#ifdef _WIN64 //|| _WIN32
+//	// use __popcnt (windows) built-in function to count the number of 1 in integer
+//	static inline int HammingDistance(int a, int b) { return static_cast<int>(__popcnt(a ^ b)); }
+//#else
 // to calculate metric for census transform
 int HammingDistance(const int& a, const int& b) {
 	int d = a ^ b;
@@ -17,7 +18,7 @@ int HammingDistance(const int& a, const int& b) {
 	}
 	return res;
 }
-#endif
+//#endif
 
 
 
@@ -166,6 +167,7 @@ Mat Stereo::stereo_match(Mat left, Mat right) {
 
 //vc++ concurrency implementation of parallel execution, but slower than openMP, not good for census
 //
+/*
 Mat Stereo::stereo_match_parallel(Mat left, Mat right) {
 	int h = left.rows;
 	int w = left.cols;
@@ -211,6 +213,7 @@ Mat Stereo::stereo_match_parallel(Mat left, Mat right) {
 	//imwrite("dis.png", imgDisparity8U);
 	return imgDisparity8U;
 }
+*/
 
 
 
@@ -239,7 +242,7 @@ int main(int argc, char** argv)
 	else {
 		Stereo s(window_size, max_disparity, tranwin_size, cost, true);
 		if (windows == "yes") {
-			dis = s.stereo_match_parallel(left, right);
+			//dis = s.stereo_match_parallel(left, right);
 		}
 		else {
 			dis = s.stereo_match(left, right);

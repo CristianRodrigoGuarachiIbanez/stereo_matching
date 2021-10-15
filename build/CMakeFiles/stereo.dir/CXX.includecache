@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cristian/CLionProjects/stereo_matching/HammingDistance.cpp
+
+/home/cristian/CLionProjects/stereo_matching/main.cpp
+ssd_stereo.h
+/home/cristian/CLionProjects/stereo_matching/ssd_stereo.h
+
+/home/cristian/CLionProjects/stereo_matching/ssd_stereo.cpp
+omp.h
+-
+ssd_stereo.h
+/home/cristian/CLionProjects/stereo_matching/ssd_stereo.h
+HammingDistance.cpp
+/home/cristian/CLionProjects/stereo_matching/HammingDistance.cpp
+
+/home/cristian/CLionProjects/stereo_matching/ssd_stereo.h
+opencv2/core/utility.hpp
+/home/cristian/CLionProjects/stereo_matching/opencv2/core/utility.hpp
+opencv2/highgui.hpp
+/home/cristian/CLionProjects/stereo_matching/opencv2/highgui.hpp
+opencv2/imgcodecs.hpp
+/home/cristian/CLionProjects/stereo_matching/opencv2/imgcodecs.hpp
+opencv2/imgproc.hpp
+/home/cristian/CLionProjects/stereo_matching/opencv2/imgproc.hpp
+stdio.h
+-
+iostream
+-
+

@@ -1,12 +1,15 @@
+#ifndef STEREO_MATCHING_SSD_STEREO_H
+#define STEREO_MATCHING_SSD_STEREO_H
 #include "opencv2/core/utility.hpp"
 #include "opencv2/highgui.hpp"
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/imgproc.hpp"
 #include <stdio.h>
 #include <iostream>
-#include <omp.h>
 using namespace cv;
 using namespace std;
+using cv::Mat;
+
 class Stereo {
 private:
 	int win_size_, max_disparity_, tran_win_size_;
@@ -22,9 +25,11 @@ public:
 		parallel_ = parallel;
 	}
 	//int get_tranwinsize() { return tran_win_size_; } // dubug
-	Mat rank_transform(Mat image, int tran_size);
-	Mat census_transform(Mat image, int tran_size);
-	Mat stereo_match(Mat left, Mat right);
-	Mat stereo_match_parallel(Mat left, Mat right);
+	Mat rank_transform(Mat &image, int tran_size);
+	Mat census_transform(Mat &image, int tran_size);
+	Mat stereo_match(Mat &left, Mat &right);
+	//Mat stereo_match_parallel(Mat left, Mat right);
 	
 };
+
+#endif //STEREO_MATCHING_SSD_STEREO_H

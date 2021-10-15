@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/stereo.dir/ssd_stereo.cpp.o CMakeFiles/stereo.dir/main.cpp.o -o stereo 
